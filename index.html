@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA Viés Cognitivo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela inicial -->
+  <section id="intro" class="screen active">
+    <h1>Seu cérebro já escolheu como vai ler este livro.<br>Toque em 3 cenários.</h1>
+  </section>
+
+  <!-- Cenários -->
+  <section id="scenarios" class="screen">
+    <div class="scenario">
+      <p>Você perdeu R$ 2k em um investimento. O mercado caiu 3%. Você:</p>
+      <button onclick="selectOption('Aversão à Perda')">A) Vende tudo agora</button>
+      <button onclick="selectOption('Paciência')">B) Espera recuperar</button>
+      <button onclick="selectOption('Apetite ao Risco')">C) Adquire mais</button>
+    </div>
+  </section>
+
+  <!-- Resultado -->
+  <section id="result" class="screen">
+    <h2 id="biasResult"></h2>
+    <p id="chapterSuggestion"></p>
+    <div class="actions">
+      <button onclick="readIntro()">📖 Ler a introdução grátis</button>
+      <button onclick="shareProfile()">📤 Compartilhe seu perfil neural</button>
+    </div>
+    <canvas id="shareCanvas" width="400" height="200" style="display:none;"></canvas>
+  </section>
+
+  <script src="style.js"></script>
+</body>
+</html>
