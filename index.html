@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PWA Viés Cognitivo</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Manifest para tornar a PWA instalável -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
 </head>
 <body>
   <!-- Tela inicial -->
@@ -33,6 +36,16 @@
     <canvas id="shareCanvas" width="400" height="200" style="display:none;"></canvas>
   </section>
 
+  <!-- Scripts -->
   <script src="style.js"></script>
+  <script>
+    // Registro do Service Worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker registrado!"))
+        .catch(err => console.error("Erro no SW:", err));
+    }
+  </script>
 </body>
 </html>
+
